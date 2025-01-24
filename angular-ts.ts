@@ -34,49 +34,94 @@ function testGetNumberInCustomizeMap() {
 
     const testCases = [
         {
+            id: 1,
             description: "Danh sách thuộc tính rỗng",
             input: { item: { a: 10 }, properties: [], defaultValue },
             expected: defaultValue,
         },
         {
+            id: 2,
             description: "Thuộc tính đầu tiên có giá trị hợp lệ (number)",
             input: { item: { a: 10, b: 20 }, properties: ["a", "b"], defaultValue },
             expected: 10,
         },
         {
+            id: 3,
             description: "Thuộc tính đầu tiên null, thuộc tính thứ hai hợp lệ (number)",
             input: { item: { a: null, b: 20 }, properties: ["a", "b"], defaultValue },
             expected: 20,
         },
         {
+            id: 4,
             description: "Thuộc tính đầu tiên undefined, thuộc tính thứ hai hợp lệ (string)",
             input: { item: { a: undefined, b: "30" }, properties: ["a", "b"], defaultValue },
             expected: 30,
         },
         {
+            id: 5,
             description: "Tất cả thuộc tính đều null hoặc undefined",
             input: { item: { a: null, b: undefined }, properties: ["a", "b"], defaultValue },
             expected: defaultValue,
         },
         {
+            id: 6,
             description: "Giá trị truyền vào là 0 (number)",
             input: { item: { a: 0, b: 20 }, properties: ["a", "b"], defaultValue },
             expected: 0,
         },
         {
+            id: 7,
             description: "Giá trị truyền vào là '0' (string)",
             input: { item: { a: "0", b: 20 }, properties: ["a", "b"], defaultValue },
             expected: 0,
         },
         {
+            id: 8,
             description: "Thuộc tính chứa giá trị không hợp lệ (NaN)",
             input: { item: { a: "abc", b: "def" }, properties: ["a", "b"], defaultValue },
             expected: defaultValue,
         },
         {
+            id: 9,
             description: "Ưu tiên lấy giá trị thuộc tính đầu tiên hợp lệ",
             input: { item: { a: "50", b: "60" }, properties: ["a", "b"], defaultValue },
             expected: 50,
+        },
+        {
+            id: 10,
+            description: "Thuộc tính đầu tiên '', thuộc tính thứ hai hợp lệ (string)",
+            input: { item: { a: "", b: "60" }, properties: ["a", "b"], defaultValue },
+            expected: 60,
+        },
+        {
+            id: 11,
+            description: "Thuộc tính đầu tiên '', thuộc tính thứ hai hợp lệ (number)",
+            input: { item: { a: "", b: 60 }, properties: ["a", "b"], defaultValue },
+            expected: 60,
+        },
+        {
+            id: 12,
+            description: "Thuộc tính đầu tiên '0.6', thuộc tính thứ hai hợp lệ (number)",
+            input: { item: { a: "0.6", b: 60 }, properties: ["a", "b"], defaultValue },
+            expected: 0.6,
+        },
+        {
+            id: 13,
+            description: "Thuộc tính đầu tiên '0.6s', thuộc tính thứ hai hợp lệ (number)",
+            input: { item: { a: "0.6s", b: 60 }, properties: ["a", "b"], defaultValue },
+            expected: 60,
+        },
+        {
+            id: 14,
+            description: "Thuộc tính đầu tiên '0,6', thuộc tính thứ hai hợp lệ (number)",
+            input: { item: { a: "0,6", b: 60 }, properties: ["a", "b"], defaultValue },
+            expected: 0.6,
+        },
+        {
+            id: 15,
+            description: "Thuộc tính đầu tiên 0.6, thuộc tính thứ hai hợp lệ (number)",
+            input: { item: { a: 0.6, b: 60 }, properties: ["a", "b"], defaultValue },
+            expected: 0.6,
         },
     ];
 
@@ -88,7 +133,8 @@ function testGetNumberInCustomizeMap() {
 
         const endTime = performance.now();
         console.log(
-            `Test case ${index + 1}: ${testCase.description}\n` +
+            `STT: ${index + 1}\n` + 
+            `Test case id-${testCase.id}: ${testCase.description}\n` +
             `Expected: ${testCase.expected}, Actual: ${actual}\n` +
             `Result: ${actual === testCase.expected ? "✅ Passed" : "❌ Failed"}\n` +
             `Excute time: ${endTime - startTime} millisecond \n`
