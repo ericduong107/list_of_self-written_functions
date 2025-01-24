@@ -18,6 +18,8 @@ function getNumberInCustomizeMap(item: any, properties: any = [], defaultValue: 
     return (temp === undefined || isNaN(temp)) ? defaultValue : temp;
 }
 
+// Có thể dùng toán tử ?? kết hợp hoặc viết một hàm mới
+
 const temp : any = {
     // maxTranslateX: 0,
     maxTranslate: "500"
