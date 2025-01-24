@@ -81,15 +81,19 @@ function testGetNumberInCustomizeMap() {
     ];
 
     testCases.forEach((testCase, index) => {
+        const startTime = performance.now();
+
         const { item, properties, defaultValue } = testCase.input;
         const actual = getNumberInCustomizeMap(item, properties, defaultValue);
+
+        const endTime = performance.now();
         console.log(
             `Test case ${index + 1}: ${testCase.description}\n` +
             `Expected: ${testCase.expected}, Actual: ${actual}\n` +
-            `Result: ${actual === testCase.expected ? "✅ Passed" : "❌ Failed"}\n`
+            `Result: ${actual === testCase.expected ? "✅ Passed" : "❌ Failed"}\n` +
+            `Excute time: ${endTime - startTime} millisecond \n`
         );
     });
 }
 
 testGetNumberInCustomizeMap();
-
