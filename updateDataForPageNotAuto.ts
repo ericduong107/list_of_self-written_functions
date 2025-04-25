@@ -1,3 +1,29 @@
+configUpdates = {
+    "animation-selected": { id: "000000" }
+  }
+  staticdataUpdates = {
+    "tablet_portrait_animation": {
+      "animation-0": {}
+    },
+    "mobile_portrait_animation": {
+      "animation-0": {}
+    },
+    "mobile_landscape_animation": {
+      "animation-0": {}
+    },
+    "tablet_portrait_animation_type": "none",
+    "tablet_landscape_animation_type": "none",
+    "tablet_landscape_animation": {
+      "animation-0": {}
+    },
+    "mobile_portrait_animation_type": "none",
+    "mobile_landscape_animation_type": "none",
+    "desktop_animation": {
+      "animation-0": {}
+    },
+    "desktop_animation_type": "none"
+  }
+
 updateDataNotAuto() {
     const devices = [
       'desktop',
