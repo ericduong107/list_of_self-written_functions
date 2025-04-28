@@ -1,0 +1,105 @@
+/**
+ * Hàm `animationFromDatabase`
+ * 
+ * Mục đích: 
+ * - Gán animation từ dữ liệu database lên DOM.
+ * - Có thể áp dụng cho toàn trang (`isPage = true`) hoặc cho từng block/component (`isPage = false`).
+ * - Khi áp dụng cho trang (`isPage = true`), cần reset trước một số CSS property (mặc định: `opacity`, `transform`) để tránh hiệu ứng cũ còn tồn tại.
+ * 
+ * @param _this - Context của component hiện tại.
+ * @param options
+ *    - isPage (Optional): Mặc định `false`. Nếu `true`, là áp dụng cho trang.
+ *    - animationKeyToReset (Optional): Các key style cần reset khi isPage = true. (Mặc định: ['opacity', 'transform']). Ưu tiên reset các key unactive
+ */
+animationFromDatabase = function (
+  _this,
+  { isPage = false, animationKeyToReset = ['opacity', 'transform'] }: { isPage?: boolean, animationKeyToReset?: string[] } = {}
+) {
+  // hàm này để tìm phần tử có class animation của chính component đó, 
+  // nếu sử dụng querySelectorAll sẽ lấy tất cả phần tử con có class animation 
+  // của tất cả component nên những phần tử con sẽ bị dính animation của phần tử cha
+  function findElementsUntil(ele, selector) {
+    let elements = [];
+    function traverse(node) {
+      if (node.id.includes('_root')) return;
+      if (node.classList.contains(selector)) {
+        elements.push(node);
+      }
+      const nodeChildren = !isPage ? node.children : [...node.children];
+      for (let child of nodeChildren) {
+        traverse(child);
+      }
+    }
+    traverse(ele);
+    return elements;
+  }
+
+  // Cập nhật animation mới chỉ dùng cho các object/block/frame không dùng cho page
+  _this.animation = isPage
+    ? _this.detailPage?.staticdata?.[_this.deviceDisplay + '_animation']
+    : _this.staticdata[_this.device + '_animation'];
+
+  const elementArray = isPage
+    ? document.querySelectorAll<HTMLElement>(`[id="preview_blank"]`)
+    : document.querySelectorAll<HTMLElement>(`[id="${_this.data._id}_root"]`);
+
+  if (elementArray.length > 0) {
+    for (const p in _this.animation) {
+      const animationProperties = _this.animation[p];
+      elementArray.forEach((ele) => {
+        let childNode;
+
+        // Lọc ra các phần tử con không phải là comment
+        if (!isPage){
+          ele.childNodes.forEach((child) => {
+            if(child.nodeName !== "#comment") {
+              childNode = child;
+            }
+          });
+        } else {
+          if (ele.nodeName !== "#comment") {
+            childNode = ele;
+          }
+        }
+        
+        const animationElements = findElementsUntil(childNode, p);
+        animationElements.forEach((animEle) => {
+          // Reset trên DOM
+          if (isPage) {
+            animationKeyToReset.forEach((key) => {
+              animEle.style.setProperty(key, '');
+            });
+          }
+          for (const q in animationProperties) {
+            animEle.style.setProperty(q, animationProperties[q]);
+          }
+        });
+      });
+    }
+  }
+
+  if(_this.staticdata[_this.device + '_animation_sub']) {
+    _this.animation_sub = _this.staticdata[_this.device + '_animation_sub']
+    if (elementArray.length > 0) {
+      for (const p in _this.animation_sub) {
+        const animationProperties = _this.animation_sub[p];
+        elementArray.forEach((ele) => {
+          // Lọc ra các phần tử con không phải là comment
+          let childNode;
+          ele.childNodes.forEach((child) => {
+            if(child.nodeName !== "#comment") {
+              childNode = child;
+            }
+          });
+
+          const animationElements = findElementsUntil(childNode, p);
+          animationElements.forEach((animEle) => {
+            for (const q in animationProperties) {
+              animEle.style.setProperty(q, animationProperties[q]);
+            }
+          });
+        });
+      }
+    }
+  }
+};
