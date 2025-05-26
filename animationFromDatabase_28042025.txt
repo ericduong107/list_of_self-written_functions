@@ -21,6 +21,7 @@ animationFromDatabase = function (
   function findElementsUntil(ele, selector) {
     let elements = [];
     function traverse(node) {
+      if (!node?.id) return;
       if (node.id.includes('_root')) return;
       if (node.classList.contains(selector)) {
         elements.push(node);
