@@ -8,16 +8,13 @@ Dùng để chạy source đã được build để test hoặc thử nghiệm h
   - Lưu ý: Phải có index.html ở bản build đó
 - Mở terminal ở thư mục run_source_html
 - Chạy lệnh:
-  python3
 
 ```bash
 python3 server.py
-```
-
-python
-
-```bash
+// Hoặc
 python server.py
+//Hoặc
+py server.py
 ```
 
 - Mở trình duyệt web của bạn và truy cập: [http://localhost:8000](http://localhost:8000)
