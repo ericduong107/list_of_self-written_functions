@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+h1 { color: #333; }
+button { margin-left: 5px; }
+input { padding: 5px; }
