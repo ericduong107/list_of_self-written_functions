@@ -18,13 +18,13 @@ Có các lệnh được dùng trong terminal ở Win/MacOs/Linux
   // Hoặc
   md namefolder1 namefolder2 namefolder3
   ```
-- Tạo file mới (Không có nội dung):
+- Tạo file mới *(Không có nội dung)*:
   ```cmd
   type nul > name.txt
   // Hoặc
   echo. > name.txt
   ```
-- Tạo file mới (Có nội dung):
+- Tạo file mới *(Có nội dung)*:
   ```cmd
   echo "This is the content of my file." > filename.txt
   // Hoặc
