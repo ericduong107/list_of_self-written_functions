@@ -7,25 +7,25 @@ Có các lệnh được dùng trong terminal ở Win/MacOs/Linux
 ### Win:
 
 - Tạo thư mục mới:
-  ```cmd
+  ```bash
   mkdir namefolder
   // Hoặc
   md namefolder
   ```
 - Tạo nhiều thư mục:
-  ```cmd
+  ```bash
   mkdir namefolder1 namefolder2 namefolder3
   // Hoặc
   md namefolder1 namefolder2 namefolder3
   ```
 - Tạo file mới *(Không có nội dung)*:
-  ```cmd
+  ```bash
   type nul > name.txt
   // Hoặc
   echo. > name.txt
   ```
 - Tạo file mới *(Có nội dung)*:
-  ```cmd
+  ```bash
   echo "This is the content of my file." > filename.txt
   // Hoặc
   copy con filename.txt
