@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+# BUG: Còn lỗi khi run file
 def crawl_list_page(url: str):
     try:
         response = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})

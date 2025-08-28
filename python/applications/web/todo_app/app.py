@@ -3,6 +3,7 @@ from models import get_tasks, add_task, toggle_task, update_task, delete_task
 
 app = Flask(__name__)
 
+# BUG: Đã chạy đƯợc nhưng khi mở lên local thì có rất nhiều lỗi.
 @app.route("/")
 def index():
     tasks = get_tasks()
