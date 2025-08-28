@@ -1,0 +1,6 @@
+-r dev.txt
+
+# Testing
+pytest==7.4.0
+pytest-django==4.5.2
+coverage==7.2.7
