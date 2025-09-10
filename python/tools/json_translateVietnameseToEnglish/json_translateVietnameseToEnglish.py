@@ -10,6 +10,7 @@ def translate_json(input_path, output_path, source_lang='vi', target_lang='en'):
         if isinstance(value, str):
             try:
                 translated = GoogleTranslator(source=source_lang, target=target_lang).translate(value)
+                print(f"Translate key '{key}': {value}")
                 translated_data[key] = translated
             except Exception as e:
                 print(f"Error translating key '{key}': {e}")
