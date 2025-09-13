@@ -1,0 +1,8 @@
+# Web framework
+Flask==2.3.3
+
+# ORM
+SQLAlchemy==2.0.21
+
+# HTTP client
+requests==2.31.0
