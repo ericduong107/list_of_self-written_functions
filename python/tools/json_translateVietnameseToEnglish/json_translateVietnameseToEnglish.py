@@ -6,12 +6,15 @@ def translate_json(input_path, output_path, source_lang='vi', target_lang='en'):
         data = json.load(f)
 
     translated_data = {}
+    indexKey = 0
     for key, value in data.items():
         if isinstance(value, str):
             try:
                 translated = GoogleTranslator(source=source_lang, target=target_lang).translate(value)
-                print(f"Translate key '{key}': {value}")
+                # print(f"{indexKey}. Translate key \"{key}\": \"{value}\"")
+                indexKey += 1
                 translated_data[key] = translated
+                print(f"{indexKey}. Translated key \"{key}\": \"{translated}\"")
             except Exception as e:
                 print(f"Error translating key '{key}': {e}")
                 translated_data[key] = value
@@ -23,3 +26,5 @@ def translate_json(input_path, output_path, source_lang='vi', target_lang='en'):
 
 # Ví dụ chạy
 translate_json('input.json', 'output.json')
+# translate_json('input.json', 'output.json', source_lang = 'en', target_lang = 'vi')
+# translate_json('input.json', 'output.json', 'en', 'us')
