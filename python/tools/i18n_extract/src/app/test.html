@@ -1,0 +1,21 @@
+<!-- sample.html (original) -->
+<button class="button-solid" (click)="handleProcessData()">Tạo giao diện</button>
+
+<!-- attribute binding: -->
+<button [nzTooltipTitle]="'Kiểm tra giao diện'"></button>
+<button [nzTooltipTitle]="'giao_dien_nguoi_dung'"></button>
+<button [nzTooltipTitle]="'Trải nghiệm người dùng' | translate"></button>
+
+<!-- plain attribute -->
+<button nzTooltipTitle="Thư mục"></button>
+
+<!-- interpolation in attribute -->
+<button nzTooltipTitle="{{'Tệp hình ảnh'}}"></button>
+<button nzTooltipTitle="{{'Hình ảnh' | translate}}"></button>
+<button nzTooltipTitle="{{'tep_tai_lieu'}}"></button>
+
+<!-- text nodes and interpolation -->
+<p>Bảng điều khiển</p>
+<p>{{'Tổng quát'}}</p>
+<p>{{'Biểu đồ cột' | translate}}</p>
+<p>{{'kieu_du_lieu'}}</p>
