@@ -1,0 +1,6 @@
+# calculator folder
+unittest # Mặc định: Tích hợp sẵn trong Python
+pytest # Dễ dùng, phổ biến, hỗ trợ kiểm thử nâng cao
+doctest # Test trực tiếp từ docstring
+nose2 # Mở rộng từ unittest
+# Mới học thì nên bắt đầu bằng `unittest` hoặc `pytest`
