@@ -4,237 +4,271 @@
     "name": "Thành phố Hà Nội",
     "englishName": "Hanoi City",
     "administrativeLevel": "Thành phố Trung ương",
-    "decree": ""
+    "decree": "",
+    "slug": "thanh-pho-ha-noi"
   },
   {
     "code": "04",
     "name": "Tỉnh Cao Bằng",
     "englishName": "Cao Bang Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-cao-bang"
   },
   {
     "code": "08",
     "name": "Tỉnh Tuyên Quang",
     "englishName": "Tuyen Quang Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-tuyen-quang"
   },
   {
     "code": "11",
     "name": "Tỉnh Điện Biên",
     "englishName": "Dien Bien Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-dien-bien"
   },
   {
     "code": "12",
     "name": "Tỉnh Lai Châu",
     "englishName": "Lai Chau Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-lai-chau"
   },
   {
     "code": "14",
     "name": "Tỉnh Sơn La",
     "englishName": "Son La Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-son-la"
   },
   {
     "code": "15",
     "name": "Tỉnh Lào Cai",
     "englishName": "Lao Cai Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-lao-cai"
   },
   {
     "code": "19",
     "name": "Tỉnh Thái Nguyên",
     "englishName": "Thai Nguyen Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-thai-nguyen"
   },
   {
     "code": "20",
     "name": "Tỉnh Lạng Sơn",
     "englishName": "Lang Son Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-lang-son"
   },
   {
     "code": "22",
     "name": "Tỉnh Quảng Ninh",
     "englishName": "Quang Ninh Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-quang-ninh"
   },
   {
     "code": "24",
     "name": "Tỉnh Bắc Ninh",
     "englishName": "Bac Ninh Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-bac-ninh"
   },
   {
     "code": "25",
     "name": "Tỉnh Phú Thọ",
     "englishName": "Phu Tho Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-phu-tho"
   },
   {
     "code": "31",
     "name": "Thành phố Hải Phòng",
     "englishName": "Hai Phong City",
     "administrativeLevel": "Thành phố Trung ương",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "thanh-pho-hai-phong"
   },
   {
     "code": "33",
     "name": "Tỉnh Hưng Yên",
     "englishName": "Hung Yen Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-hung-yen"
   },
   {
     "code": "37",
     "name": "Tỉnh Ninh Bình",
     "englishName": "Ninh Binh Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-ninh-binh"
   },
   {
     "code": "38",
     "name": "Tỉnh Thanh Hóa",
     "englishName": "Thanh Hoa Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-thanh-hoa"
   },
   {
     "code": "40",
     "name": "Tỉnh Nghệ An",
     "englishName": "Nghe An Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-nghe-an"
   },
   {
     "code": "42",
     "name": "Tỉnh Hà Tĩnh",
     "englishName": "Ha Tinh Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-ha-tinh"
   },
   {
     "code": "44",
     "name": "Tỉnh Quảng Trị",
     "englishName": "Quang Tri Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-quang-tri"
   },
   {
     "code": "46",
     "name": "Thành phố Huế",
     "englishName": "Hue City",
     "administrativeLevel": "Thành phố Trung ương",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "thanh-pho-hue"
   },
   {
     "code": "48",
     "name": "Thành phố Đà Nẵng",
     "englishName": "Da Nang City",
     "administrativeLevel": "Thành phố Trung ương",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "thanh-pho-da-nang"
   },
   {
     "code": "51",
     "name": "Tỉnh Quảng Ngãi",
     "englishName": "Quang Ngai Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-quang-ngai"
   },
   {
     "code": "52",
     "name": "Tỉnh Gia Lai",
     "englishName": "Gia Lai Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-gia-lai"
   },
   {
     "code": "56",
     "name": "Tỉnh Khánh Hòa",
     "englishName": "Khanh Hoa Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-khanh-hoa"
   },
   {
     "code": "66",
     "name": "Tỉnh Đắk Lắk",
     "englishName": "Dak Lak Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-dak-lak"
   },
   {
     "code": "68",
     "name": "Tỉnh Lâm Đồng",
     "englishName": "Lam Dong Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-lam-dong"
   },
   {
     "code": "75",
     "name": "Tỉnh Đồng Nai",
     "englishName": "Dong Nai Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-dong-nai"
   },
   {
     "code": "79",
     "name": "Thành phố Hồ Chí Minh",
     "englishName": "Ho Chi Minh City",
     "administrativeLevel": "Thành phố Trung ương",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "thanh-pho-ho-chi-minh"
   },
   {
     "code": "80",
     "name": "Tỉnh Tây Ninh",
     "englishName": "Tay Ninh Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-tay-ninh"
   },
   {
     "code": "82",
     "name": "Tỉnh Đồng Tháp",
     "englishName": "Dong Thap Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-dong-thap"
   },
   {
     "code": "86",
     "name": "Tỉnh Vĩnh Long",
     "englishName": "Vinh Long Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-vinh-long"
   },
   {
     "code": "91",
     "name": "Tỉnh An Giang",
     "englishName": "An Giang Province",
     "administrativeLevel": "Tỉnh",
-    "decree": ""
+    "decree": "",
+    "slug": "tinh-an-giang"
   },
   {
     "code": "92",
     "name": "Thành phố Cần Thơ",
     "englishName": "Can Tho City",
     "administrativeLevel": "Thành phố Trung ương",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "thanh-pho-can-tho"
   },
   {
     "code": "96",
     "name": "Tỉnh Cà Mau",
     "englishName": "Ca Mau Province",
     "administrativeLevel": "Tỉnh",
-    "decree": "202/2025/QH15 - 12/06/2025"
+    "decree": "202/2025/QH15 - 12/06/2025",
+    "slug": "tinh-ca-mau"
   }
 ]
