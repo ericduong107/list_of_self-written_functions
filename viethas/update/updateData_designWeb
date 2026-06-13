@@ -1,0 +1,70 @@
+async updateData() {
+    try {
+      const classContentMap = {
+        AtwText: 'text__content',
+        AtwTextRepeat: 'text__content',
+        AtwTextName: 'text-name__content',
+        AtwTextNewsTitle: 'text-news-title__content',
+        AtwTextCategoryName: 'text-category-name__content',
+      };
+      // 1. Lấy danh sách đối tượng từ database
+      const objsNow: any = await this.vhQueryAutoWeb.getObjects_byFields({
+        component: { $in: ["AtwText", "AtwTextRepeat", "AtwTextName", 'AtwTextNewsTitle', 'AtwTextCategoryName'] },
+      });
+      // const objsNow: any = await this.vhQueryAutoWeb.getObjects_byFields({
+      //   _id: { $in: ["6a1f8fd1a28eb6f16b5f341e", "6a1f9b3981fa7b11b950ddec"] },
+      // });
+
+      // console.log("Dữ liệu gốc từ DB:", objsNow);
+      const objsNames = objsNow.map(item => item.component);
+      console.log("Tên components:", objsNames);
+
+      // // 2. Chạy vòng lặp bất đồng bộ để xử lý từng object trong danh sách
+      // // map sẽ tạo ra một danh sách các Promises
+      const promises = objsNow.map(objNow => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            let objNew = JSON.parse(JSON.stringify(objNow));
+
+            this.functionService.devices.forEach(d => {
+              objNew[d.value + '_class'][classContentMap[objNow.component]]['display'] = '-webkit-box';
+              objNew[d.value + '_class'][classContentMap[objNow.component]]['-webkit-box-orient'] = 'vertical';
+            });
+
+            resolve(objNew);
+          }, 0);
+        });
+      });
+
+      // // 3. Đợi tất cả các tiến trình xử lý xong
+      const objsNew = await Promise.all(promises);
+
+      console.log("Danh sách đã được gộp (Merge) mới:", objsNew);
+
+      const isConfirm = confirm(`Hệ thống đã chuẩn bị xong ${objsNew.length} đối tượng. Hãy kiểm tra Console (F12) trước khi bấm OK.\n\nBạn có muốn cập nhật vào Database không?`);
+
+      if (isConfirm) {
+        // 4. NẾU OK -> CHẠY UPDATE
+        console.log("Đang tiến hành cập nhật...");
+        const updatePromises = objsNew.map((obj: any) => this.vhQueryAutoWeb.updateObject(obj._id, obj));
+
+        const updateResults = await Promise.all(updatePromises);
+        console.log("Cập nhật thành công:", updateResults);
+        alert(`Đã cập nhật xong ${updateResults.length} đối tượng!`);
+      } else {
+        // 5. NẾU CANCEL -> CHỈ LOG RA NHỮNG OBJ KHÔNG CẬP NHẬT
+        console.warn("Người dùng đã hủy cập nhật.");
+        console.log("Danh sách các đối tượng chưa cập nhật:", objsNew);
+      }
+
+      // this.vhQueryAutoWeb.getObject("6a20dd34a3f72d4d4ec64cd3").then((obj: any) => {
+      //   obj.desktop_class.radio__container['flex-wrap'] = 'wrap';
+      //   obj.tablet_portrait_class.radio__container['flex-wrap'] = 'wrap';
+      //   obj.mobile_portrait_class.radio__container['flex-wrap'] = 'wrap';
+
+      //   this.vhQueryAutoWeb.updateObject("6a20dd34a3f72d4d4ec64cd3", obj);
+      // });
+    } catch (error) {
+      console.error("Lỗi trong quá trình updateData:", error);
+    }
+  }
