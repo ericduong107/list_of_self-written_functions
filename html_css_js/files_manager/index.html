@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách file</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        /* Khu vực bộ lọc */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .filter-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .filter-item label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #495057;
+        }
+        .filter-item input, .filter-item select {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        .filter-item input:focus, .filter-item select:focus {
+            border-color: #80bdff;
+        }
+        /* Danh sách file */
+        #file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-item button {
+            cursor: pointer;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 4px;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .file-item button:hover {
+            background-color: #f0f0f0;
+        }
+        .file-date {
+            font-size: 12px;
+            color: #888;
+            margin-left: auto;
+            margin-right: 15px;
+        }
+
+        /* KHU VỰC THÊM MỚI: Thẻ chứa ảnh Preview */
+        #image-preview {
+            position: fixed;
+            display: none; /* Mặc định ẩn */
+            pointer-events: none; /* Tránh chuột bị giật khi đè vào ảnh */
+            max-width: 250px;
+            max-height: 250px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 6px;
+            padding: 4px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Danh sách file trong thư mục</h2>
+
+    <div class="filter-container">
+        <div class="filter-item">
+            <label for="search-input">Tìm kiếm tên</label>
+            <input type="text" id="search-input" placeholder="Nhập tên file...">
+        </div>
+        <div class="filter-item">
+            <label for="ext-select">Đuôi file</label>
+            <select id="ext-select">
+                <option value="all">Tất cả định dạng</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="sort-select">Sắp xếp theo</label>
+            <select id="sort-select">
+                <option value="az">Tên: A → Z</option>
+                <option value="za">Tên: Z → A</option>
+                <option value="newest">Thời gian: Mới nhất</option>
+                <option value="oldest">Thời gian: Cũ nhất</option>
+            </select>
+        </div>
+    </div>
+
+    <ul id="file-list">Đang tải danh sách và cấu trúc ngày tháng...</ul>
+
+    <img id="image-preview" src="" alt="Preview">
+
+    <script>
+        // Cấu hình tài khoản GitHub của bạn
+        const user = 'ericduong107';
+        const repo = 'ericduong107.github.io';
+        const path = 'assets/test'; 
+
+        // Biến toàn cục lưu trữ danh sách file gốc để lọc dữ liệu
+        let allFiles = [];
+
+        // Các định dạng file được phép preview ảnh
+        const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp'];
+
+        // Hàm copy link vào bộ nhớ tạm
+        function copyCurrentLink(url, index) {        
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById(`copyBtn${index}`);
+                const originalText = btn.innerText;
+                
+                btn.innerText = "Đã copy!";
+                btn.style.backgroundColor = "#4CAF50"; 
+                btn.style.color = "#fff";
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = "";
+                    btn.style.color = "";
+                }, 2000);
+            }).catch(err => {
+                console.error('Lỗi khi copy: ', err);
+            });
+        }
+
+        // Hàm lấy ngày commit cuối cùng của một file cụ thể (phục vụ việc xếp theo thời gian)
+        async function getFileDate(filePath) {
+            try {
+                const res = await fetch(`https://api.github.com/repos/${user}/${repo}/commits?path=${filePath}&per_page=1`);
+                const commits = await res.json();
+                if (commits && commits.length > 0) {
+                    return new Date(commits[0].commit.committer.date);
+                }
+            } catch (e) {
+                console.error("Không lấy được ngày của file: " + filePath, e);
+            }
+            return new Date(0); // Trả về ngày mặc định nếu lỗi
+        }
+
+        // Hàm tải toàn bộ dữ liệu từ GitHub khi load trang
+        async function getFiles() {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${path}`);
+                const data = await response.json();
+                
+                if (!Array.isArray(data)) {
+                    document.getElementById('file-list').innerText = 'Không thể lấy dữ liệu hoặc thư mục trống.';
+                    return;
+                }
+
+                const fetchDatePromises = data.map(async (file) => {
+                    if (['index.html', 'style.css', 'script.js', 'README.md'].includes(file.name)) {
+                        return null;
+                    }
+
+                    // Lấy phần mở rộng (đuôi file)
+                    let ext = 'Thư mục';
+                    if (file.type !== 'dir') {
+                        const dotIndex = file.name.lastIndexOf('.');
+                        ext = dotIndex !== -1 ? file.name.substring(dotIndex + 1).toLowerCase() : 'Không đuôi';
+                    }
+
+                    // Tải thêm ngày tháng cập nhật của file
+                    const date = await getFileDate(file.path);
+
+                    return {
+                        name: file.name,
+                        type: file.type,
+                        ext: ext,
+                        date: date,
+                        path: file.path
+                    };
+                });
+
+                // Chờ load xong toàn bộ ngày tháng của các file
+                const resolvedFiles = await Promise.all(fetchDatePromises);
+                allFiles = resolvedFiles.filter(file => file !== null);
+
+                // Khởi tạo danh sách dropdown đuôi file
+                initExtensionFilter();
+
+                // Lắng nghe sự kiện thay đổi của các bộ lọc
+                document.getElementById('search-input').addEventListener('input', filterAndRender);
+                document.getElementById('ext-select').addEventListener('change', filterAndRender);
+                document.getElementById('sort-select').addEventListener('change', filterAndRender);
+
+                // Khởi tạo các sự kiện di chuột cho Preview ảnh (chỉ cần gán 1 lần bằng cơ chế Event Delegation)
+                initPreviewEvents();
+
+                // Tiến hành lọc và vẽ giao diện lần đầu tiên
+                filterAndRender();
+
+            } catch (error) {
+                console.error('Lỗi fetch dữ liệu: ', error);
+                document.getElementById('file-list').innerText = 'Có lỗi xảy ra khi tải danh sách file.';
+            }
+        }
+
+        // Tự động gom nhóm các đuôi file có trong thư mục để bỏ vào thanh Select
+        function initExtensionFilter() {
+            const extSelect = document.getElementById('ext-select');
+            const extensions = new Set();
+            
+            allFiles.forEach(file => {
+                if(file.type !== 'dir') {
+                    extensions.add(file.ext);
+                }
+            });
+
+            extensions.forEach(ext => {
+                const option = document.createElement('option');
+                option.value = ext;
+                option.innerText = `.${ext}`;
+                extSelect.appendChild(option);
+            });
+        }
+
+        // KHU VỰC THÊM MỚI: Quản lý sự kiện Hover Preview bằng Event Delegation (Ủy nhiệm sự kiện)
+        function initPreviewEvents() {
+            const previewImg = document.getElementById('image-preview');
+            const fileList = document.getElementById('file-list');
+
+            fileList.addEventListener('mouseover', (e) => {
+                // Kiểm tra xem phần tử được hover có phải là thẻ <a> có data-preview không
+                const target = e.target.closest('a[data-preview]');
+                if (!target) return;
+
+                const src = target.getAttribute('data-preview');
+                previewImg.src = src;
+                previewImg.style.display = 'block';
+            });
+
+            fileList.addEventListener('mousemove', (e) => {
+                if (previewImg.style.display === 'block') {
+                    // Đặt vị trí ảnh preview cách con trỏ chuột 15px để tránh bị đè dữ liệu
+                    previewImg.style.left = (e.clientX + 15) + 'px';
+                    previewImg.style.top = (e.clientY + 15) + 'px';
+                }
+            });
+
+            fileList.addEventListener('mouseout', (e) => {
+                const target = e.target.closest('a[data-preview]');
+                if (!target) return;
+
+                previewImg.style.display = 'none';
+                previewImg.src = ''; // Xóa src để giải phóng bộ nhớ tạm
+            });
+        }
+
+        // Hàm cốt lõi: Xử lý Tìm kiếm -> Lọc đuôi -> Sắp xếp -> Hiển thị kết quả
+        function filterAndRender() {
+            const keyword = document.getElementById('search-input').value.toLowerCase().trim();
+            const selectedExt = document.getElementById('ext-select').value;
+            const sortBy = document.getElementById('sort-select').value;
+
+            // 1. Bước lọc dữ liệu (Filter)
+            let processedFiles = allFiles.filter(file => {
+                const matchKeyword = file.name.toLowerCase().includes(keyword);
+                const matchExt = (selectedExt === 'all') || (file.ext === selectedExt);
+                return matchKeyword && matchExt;
+            });
+
+            // 2. Bước sắp xếp dữ liệu (Sort)
+            if (sortBy === 'az') {
+                processedFiles.sort((a, b) => a.name.localeCompare(b.name, 'vi', { sensitivity: 'base' }));
+            } else if (sortBy === 'za') {
+                processedFiles.sort((a, b) => b.name.localeCompare(a.name, 'vi', { sensitivity: 'base' }));
+            } else if (sortBy === 'newest') {
+                processedFiles.sort((a, b) => b.date - a.date);
+            } else if (sortBy === 'oldest') {
+                processedFiles.sort((a, b) => a.date - b.date);
+            }
+
+            // 3. Bước hiển thị kết quả (Render)
+            const listElement = document.getElementById('file-list');
+            listElement.innerHTML = '';
+
+            if(processedFiles.length === 0) {
+                listElement.innerHTML = '<li style="color: #999; border: none;">Không tìm thấy file phù hợp...</li>';
+                return;
+            }
+
+            processedFiles.forEach((file, index) => {
+                const li = document.createElement('li');
+                li.className = 'file-item';
+                
+                const icon = file.type === 'dir' ? '📁' : '📄';
+                const imageLink = `https://${repo}/${path}/${file.name}`;
+                const btnCopyLink = `<button onclick="copyCurrentLink('${imageLink}', ${index})" id="copyBtn${index}">Sao chép Link</button>`;
+                
+                // Định dạng hiển thị ngày giờ ngắn gọn (DD/MM/YYYY)
+                const formattedDate = file.date.getTime() === 0 ? 'N/A' : file.date.toLocaleDateString('vi-VN');
+
+                li.innerHTML = `
+                    <span>${icon}</span> 
+                    <a href="${file.name}" target="_blank" rel="noopener noreferrer">${file.name}</a> 
+                    <span class="file-date">Cập nhật: ${formattedDate}</span>
+                    ${btnCopyLink}
+                `;
+
+                // Giữ nguyên thiết kế style cũ của bạn bằng Object.assign
+                Object.assign(li.style, {
+                    display: 'flex',
+                    gap: '10px',
+                    alignItems: 'center',
+                    fontSize: '16px',
+                    marginBottom: '8px',
+                    padding: '5px',
+                    borderBottom: '1px solid #eee',
+                    textDecoration: 'none'
+                });
+
+                listElement.appendChild(li);
+            });
+        }
+
+        // Chạy chương trình
+        getFiles();
+    </script>
+</body>
+</html>
