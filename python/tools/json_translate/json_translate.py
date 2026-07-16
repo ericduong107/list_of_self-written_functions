@@ -25,6 +25,21 @@ def translate_json(input_path, output_path, source_lang='vi', target_lang='en'):
         json.dump(translated_data, f, ensure_ascii=False, indent=2)
 
 # Ví dụ chạy
-translate_json('input.json', 'output.json')
-# translate_json('input.json', 'output.json', source_lang = 'en', target_lang = 'vi')
-# translate_json('input.json', 'output.json', 'en', 'us')
+# translate_json('input_vi.json', 'output_en.json')
+# translate_json('input_en.json', 'output_vi.json', source_lang = 'en', target_lang = 'vi')
+# translate_json('input_en.json', 'output_us.json', 'en', 'us')
+
+print('Tiếng Anh')
+translate_json('input_vi.json', 'output_en.json')
+print('======================================')
+print('Tiếng Hàn')
+translate_json('input_vi.json', 'output_ko.json', 'vi', 'ko')
+print('======================================')
+print('Tiếng Nhật')
+translate_json('input_vi.json', 'output_ja.json', 'vi', 'ja')
+print('======================================')
+print('Tiếng Trung')
+translate_json('input_vi.json', 'output_zh-CN.json', 'vi', 'zh-CN')
+
+# Muốn nhanh hơn thì sài cái này
+# https://translate.i18next.com/
