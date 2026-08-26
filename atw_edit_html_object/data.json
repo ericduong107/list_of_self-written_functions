@@ -1,0 +1,259 @@
+{
+	"home_block_01": [
+		{
+	        "title_vn": "Lựa chọn mô hình phát triển?",
+	        "desc_vn": "Làm rõ loại hình tài sản, quy mô, tiêu chuẩn kỹ thuật và các phương án phân kỳ phù hợp với điều kiện thực tế.",
+	        "title_gb": "Choosing a development model?",
+	        "desc_gb": "Clarify the type of asset, scale, technical standards, and phasing options that are appropriate to the actual conditions."
+	    },
+	    {
+	        "title_vn": "Chân dung khách hàng mục tiêu?",
+	        "desc_vn": "Khoanh vùng nhóm ngành, tệp doanh nghiệp và dòng vốn phù hợp với lợi thế cạnh tranh riêng của dự án.",
+	        "title_gb": "What is the profile of the target customer?",
+	        "desc_gb": "Identify the industry sectors, business segments, and capital flows that best align with the project's unique competitive advantages."
+	    },
+	    {
+	        "title_vn": "Thiết lập ưu tiên chiến lược?",
+	        "desc_vn": "Xác định các điều kiện cần kiểm định, điều chỉnh hoặc đầu tư hoàn thiện trước khi bước sang giai đoạn tiếp theo.",
+	        "title_gb": "Setting strategic priorities?",
+	        "desc_gb": "Identify the conditions that need to be tested, adjusted, or improved through investment before moving on to the next phase."
+	    }
+	],
+	"home_block_02": [
+		{
+		    "title_vn": "Thu thập tín hiệu",
+		    "desc_vn": "Tập hợp dữ liệu về cung cầu, hạ tầng, ngành, doanh nghiệp và các chuyển động có liên quan đến tài sản.",
+		    "title_gb": "Gather market signals",
+		    "desc_gb": "Collect data on supply and demand, infrastructure, industry, companies, and movements related to the asset."
+		},
+		{
+		    "title_vn": "Đối chiếu bối cảnh",
+		    "desc_vn": "Đặt dữ liệu vào đúng vị trí, loại hình tài sản, phân khúc khách hàng và thời điểm phát triển.",
+		    "title_gb": "Contextualize the setting",
+		    "desc_gb": "Situate the data in the appropriate context — asset type, customer segment, and timing of development."
+		},
+		{
+		    "title_vn": "Kiểm định giả định",
+		    "desc_vn": "Kiểm tra các điều kiện quyết định tính khả thi như nguồn cầu, cạnh tranh, kết nối và tiêu chuẩn sản phẩm.",
+		    "title_gb": "Validate assumptions",
+		    "desc_gb": "Test the conditions that determine feasibility, such as demand sources, competition, connectivity, and product standards."
+		},
+		{
+		    "title_vn": "Chuyển hóa thành hành động",
+		    "desc_vn": "Đề xuất mô hình, phân kỳ, ngành mục tiêu và các ưu tiên thương mại có thể triển khai.",
+		    "title_gb": "Translate into action",
+		    "desc_gb": "Propose development models, phasing, target sectors, and implementable commercial priorities."
+		}
+	],
+	"home_block_03": [
+		{
+		    "title_vn": "Thị trường & Khách hàng",
+		    "desc_vn": "Giải mã bức tranh cung cầu, áp lực cạnh tranh và ngành mục tiêu để xác lập cơ hội có cơ sở.",
+		    "note_vn": "Đầu ra: bản đồ cơ hội, nhóm ngành ưu tiên và đánh giá khả năng hấp thụ.",
+		    "title_gb": "Market & Customers",
+			"desc_gb": "Decode the supply–demand landscape, competitive pressures, and target industries to identify well-founded opportunities.",
+			"note_gb": "Outputs: opportunity map, priority industry groups, and absorption capacity assessment.",
+		    "links": [
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Nghiên cứu thị trường công nghiệp",
+					"name_gb": "Industrial market research"
+		    	},
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Nghiên cứu khả thi dự án",
+					"name_gb": "Project feasibility study"
+		    	},
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Chiến lược thu hút FDI",
+					"name_gb": "FDI attraction strategy"
+		    	}
+		    ],
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M96 96c17.7 0 32 14.3 32 32v336c0 8.8 7.2 16 16 16h400c17.7 0 32 14.3 32 32s-14.3 32-32 32H144c-44.2 0-80-35.8-80-80V128c0-17.7 14.3-32 32-32m112 192c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32m144-64v160c0 17.7-14.3 32-32 32s-32-14.3-32-32V224c0-17.7 14.3-32 32-32s32 14.3 32 32m80 32c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32s-32-14.3-32-32v-96c0-17.7 14.3-32 32-32m144-96v224c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32\"/></svg>"
+		},
+		{
+		    "title_vn": "Sản phẩm & Phân kỳ đầu tư",
+		    "desc_vn": "Hoạch định cấu trúc tài sản, tiêu chuẩn sản phẩm và lộ trình phát triển để kiến tạo lợi thế dài hạn.",
+		    "note_vn": "Đầu ra: mô hình tài sản, tiêu chuẩn kỹ thuật và các kịch bản phân kỳ.",
+		    "title_gb": "Product & Investment Phasing",
+			"desc_gb": "Plan asset structures, product standards, and development roadmaps to create long-term advantage.",
+			"note_gb": "Outputs: asset models, technical standards, and phasing scenarios.",
+		    "links": [
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Khu công nghiệp & cụm công nghiệp",
+					"name_gb": "Industrial parks & clusters"
+		    	},
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Kho xưởng & nhà máy xây sẵn",
+					"name_gb": "Warehouses & pre-built factories"
+		    	},
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Lựa chọn địa điểm sản xuất",
+					"name_gb": "Manufacturing site selection"
+		    	}
+		    ],
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M296.5 69.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0l-218.6-101c-8.5-4-13.9-12.5-13.9-21.8s5.4-17.9 13.9-21.8zM112.1 282.4l164.3 75.9c27.7 12.8 59.6 12.8 87.3 0L528 282.4l34.1 15.8c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0l-218.6-101c-8.5-4-13.9-12.5-13.9-21.8s5.4-17.9 13.9-21.8l34.1-15.8zM77.9 426.2l34.1-15.8 164.3 75.9c27.7 12.8 59.6 12.8 87.3 0l164.3-75.9 34.1 15.8c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0l-218.5-101c-8.5-4-13.9-12.5-13.9-21.8s5.4-17.9 13.9-21.8\"/></svg>"
+		},
+		{
+		    "title_vn": "Thương mại & Triển khai",
+		    "desc_vn": "Thiết lập định vị, cấu trúc giá và kế hoạch tiếp cận khách hàng để đưa tài sản ra thị trường đúng nhịp.",
+		    "note_vn": "Đầu ra: khung định vị, kế hoạch lấp đầy và pipeline khách hàng mục tiêu.",
+		    "title_gb": "Commercialization & Deployment",
+			"desc_gb": "Establish positioning, pricing structure, and a customer outreach plan to bring the asset to market at the right pace.",
+			"note_gb": "Outputs: positioning framework, occupancy/absorption plan, and target customer pipeline.",
+		    "links": [
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Định vị & chiến lược thương mại",
+					"name_gb": "Positioning & commercial strategy"
+		    	},
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Kế hoạch hấp thụ & lấp đầy",
+					"name_gb": "Absorption & occupancy plan"
+		    	},
+		    	{ 
+		    		"url": "#", 
+				    "name_vn": "Rà soát & tái cấu trúc tài sản",
+					"name_gb": "Asset review & restructuring"
+		    	}
+		    ],
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M512 320c0-106-86-192-192-192s-192 86-192 192 86 192 192 192 192-86 192-192m-448 0C64 178.6 178.6 64 320 64s256 114.6 256 256-114.6 256-256 256S64 461.4 64 320m256 80c44.2 0 80-35.8 80-80s-35.8-80-80-80-80 35.8-80 80 35.8 80 80 80m0-224c79.5 0 144 64.5 144 144s-64.5 144-144 144-144-64.5-144-144 64.5-144 144-144m-32 144c0-17.7 14.3-32 32-32s32 14.3 32 32-14.3 32-32 32-32-14.3-32-32\"/></svg>"
+		}
+	],
+	"home_block_04": [
+		{
+		    "title_vn": "Tín hiệu cung – cầu",
+		    "desc_vn": "Theo dõi nguồn cung hiện hữu, nguồn cung tương lai và những biến động có thể ảnh hưởng đến khả năng hấp thụ.",
+		    "title_gb": "Supply–Demand Signals",
+			"desc_gb": "Monitor existing and future supply and any fluctuations that could affect absorption capacity.",
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M119.9 75.5c-11.3-6.9-26.1-3.2-33 8.1-24.8 41-39 89.1-39 140.4s14.2 99.4 39 140.4c6.9 11.3 21.6 15 33 8.1s15-21.6 8.1-33c-20.3-33.6-32-73.2-32-115.5s11.7-81.9 32.1-115.6c6.9-11.3 3.2-26.1-8.1-33zm400.1 0c-11.3 6.9-15 21.6-8.1 33 20.4 33.7 32.1 73.3 32.1 115.6s-11.7 81.9-32.1 115.6c-6.9 11.3-3.2 26.1 8.1 33s26.1 3.2 33-8.1c24.8-41 39-89.1 39-140.4s-14.2-99.6-39-140.6c-6.9-11.3-21.6-15-33-8.1M352 279.4c19.1-11.1 32-31.7 32-55.4 0-35.3-28.7-64-64-64s-64 28.7-64 64c0 23.7 12.9 44.4 32 55.4V544c0 17.7 14.3 32 32 32s32-14.3 32-32zM212.2 155c7.2-11.2 3.9-26-7.2-33.2s-26-3.9-33.2 7.2c-17.6 27.4-27.8 60-27.8 95s10.2 67.6 27.8 95c7.2 11.2 22 14.4 33.2 7.2s14.4-22 7.2-33.2c-12.8-19.9-20.2-43.6-20.2-69s7.4-49.1 20.2-69m256-26c-7.2-11.2-22-14.4-33.2-7.2s-14.4 22-7.2 33.2c12.8 19.9 20.2 43.6 20.2 69s-7.4 49.1-20.2 69c-7.2 11.2-3.9 26 7.2 33.2s26 3.9 33.2-7.2c17.6-27.4 27.8-60 27.8-95s-10.2-67.6-27.8-95\"/></svg>"
+		},
+		{
+		    "title_vn": "Địa điểm & kết nối",
+		    "desc_vn": "Đặt vị trí trong bối cảnh hạ tầng, logistics, lao động và độ phù hợp với từng nhóm ngành.",
+		    "title_gb": "Location & Connectivity",
+			"desc_gb": "Assess the site in the context of infrastructure, logistics, labor, and suitability for each industry segment.",
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M176 168c13.3 0 24-10.7 24-24s-10.7-24-24-24-24 10.7-24 24 10.7 24 24 24m80-24c0 32.8-19.7 61-48 73.3V288h176c26.5 0 48-21.5 48-48v-22.7c-28.3-12.3-48-40.5-48-73.3 0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V240c0 61.9-50.1 112-112 112H208v70.7c28.3 12.3 48 40.5 48 73.3 0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V217.4C115.7 205 96 176.8 96 144c0-44.2 35.8-80 80-80s80 35.8 80 80m232 0c0-13.3-10.7-24-24-24s-24 10.7-24 24 10.7 24 24 24 24-10.7 24-24M176 520c13.3 0 24-10.7 24-24s-10.7-24-24-24-24 10.7-24 24 10.7 24 24 24\"/></svg>"
+		},
+		{
+		    "title_vn": "Ngành & nguồn cầu",
+		    "desc_vn": "Đọc chuỗi cung ứng, dòng dịch chuyển sản xuất và nhu cầu mở rộng để nhận diện cầu thực.",
+		    "title_gb": "Sectors & Demand Sources",
+			"desc_gb": "Analyze supply chains, manufacturing relocation flows, and expansion needs to identify real demand.",
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M96 96c-17.7 0-32 14.3-32 32v368c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V216.2c0-18.2-19.4-29.7-35.4-21.1L384 279.4v-63.2c0-18.2-19.4-29.7-35.4-21.1L192 279.4V128c0-17.7-14.3-32-32-32z\"/></svg>"
+		},
+		{
+		    "title_vn": "Nhận định & hàm ý",
+		    "desc_vn": "Chuyển dữ liệu thành góc nhìn: điều gì thay đổi, tác động thế nào và dự án cần chuẩn bị gì.",
+		    "title_gb": "Insights & Implications",
+			"desc_gb": "Turn data into perspectives: what is changing, the likely impacts, and what the project should prepare for.",
+			"svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 640\"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d=\"M480 272c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L394.7 440c-34.4 25.1-76.8 40-122.7 40-114.9 0-208-93.1-208-208S157.1 64 272 64s208 93.1 208 208M272 416c79.5 0 144-64.5 144-144s-64.5-144-144-144-144 64.5-144 144 64.5 144 144 144\"/></svg>"
+		}
+	],
+	"home_block_05": [
+		{
+		    "title_vn": "Tín hiệu",
+		    "desc_vn": "Nguồn cung gia tăng quanh một hành lang công nghiệp đang có bước chuyển về kết nối.",
+		    "title_gb": "Signal",
+    		"desc_gb": "Increasing supply along an industrial corridor that is shifting toward improved connectivity."
+		},
+		{
+		    "title_vn": "Diễn giải",
+		    "desc_vn": "Cạnh tranh sẽ dịch từ diện tích và giá sang tiêu chuẩn, thời gian bàn giao và khả năng phục vụ ngành.",
+		    "title_gb": "Interpretation",
+    		"desc_gb": "Competition will shift from area and price toward product standards, delivery timelines, and the ability to serve specific industries."
+		},
+		{
+		    "title_vn": "Hàm ý",
+		    "desc_vn": "Cần kiểm định lại ngành mục tiêu, chuẩn sản phẩm và lộ trình đưa hàng ra thị trường.",
+		    "title_gb": "Implications",
+    		"desc_gb": "Revalidate target sectors, product standards, and the go‑to‑market roadmap."
+		}
+	],
+	"home_block_07": [
+		{
+		    "title_vn": "MAXON Intel",
+		    "subtitle_vn": "Nghiên cứu & hoạch định",
+		    "desc_vn": "Giải mã dữ liệu, kiểm định địa điểm, cấu trúc sản phẩm và lộ trình thương mại.",
+		    "title_gb": "MAXON Intel",
+		    "subtitle_gb": "Research & Planning",
+		    "desc_gb": "Analyze data, validate sites, define product structures, and map commercial roadmaps."
+		},
+		{
+		    "title_vn": "MAXON Industrial",
+		    "subtitle_vn": "Xúc tiến & triển khai",
+		    "desc_vn": "Kết nối mạng lưới B2B, dòng vốn FDI và các cơ hội giao dịch phù hợp.",
+		    "title_gb": "MAXON Industrial",
+		    "subtitle_gb": "Promotion & Deployment",
+		    "desc_gb": "Connect B2B networks, FDI capital flows, and relevant transaction opportunities."
+		},
+		{
+		    "title_vn": "MAXON Managed",
+		    "subtitle_vn": "Vận hành & tối ưu",
+		    "desc_vn": "Theo dõi hiệu quả tài sản, vận hành và thu thập tín hiệu từ thị trường thực tế.",
+		    "title_gb": "MAXON Managed",
+		    "subtitle_gb": "Operations & Optimization",
+		    "desc_gb": "Monitor asset performance and operations while collecting signals from the real market."
+		},
+		{
+		    "title_vn": "MAXON Creative",
+		    "subtitle_vn": "Thương hiệu & marketing",
+		    "desc_vn": "Chuyển chiến lược thành hệ nhận diện, nội dung và điểm chạm thị trường.",
+		    "title_gb": "MAXON Creative",
+		    "subtitle_gb": "Branding & Marketing",
+		    "desc_gb": "Translate strategy into brand identity, content, and market touchpoints."
+		}
+	],
+	"home_block_08": [
+		{
+		    "category_vn": "Báo cáo & Ấn phẩm chiến lược",
+		    "title_vn": "Bản đồ cơ hội công nghiệp theo các hành lang tăng trưởng mới",
+		    "subtitle_vn": "Tháng 08 · 2026",
+		    "desc_vn": "Một khung theo dõi vị trí, hạ tầng và ngành để đọc cơ hội trước khi định hình quỹ đất.",
+		    "category_gb": "Reports & Strategic Publications",
+		    "title_gb": "Industrial opportunity map for emerging growth corridors",
+		    "subtitle_gb": "August 2026",
+		    "desc_gb": "A framework to track location, infrastructure, and sectors to identify opportunities before shaping land portfolios.",
+		    "link": { 
+	    		"url": "#", 
+			    "name_vn": "Đọc ấn phẩm",
+				"name_gb": "Read publication"
+	    	}
+		},
+		{
+		    "category_vn": "Nhịp đập thị trường",
+		    "title_vn": "Khi hạ tầng mở đường, nguồn cung không tự động trở thành lợi thế",
+		    "subtitle_vn": "Cập nhật tuần",
+		    "desc_vn": "Những điều kiện cần kiểm chứng sau một thông tin đầu tư hạ tầng trọng yếu.",
+		    "category_gb": "Market Pulse",
+		    "title_gb": "When infrastructure paves the way, supply doesn't automatically become an advantage",
+		    "subtitle_gb": "Weekly update",
+		    "desc_gb": "Key conditions to validate after a major infrastructure investment announcement.",
+		    "link": { 
+	    		"url": "#", 
+			    "name_vn": "Đọc ấn phẩm",
+				"name_gb": "Read publication"
+	    	}
+		},
+		{
+		    "category_vn": "Phân tích chuyên sâu",
+		    "title_vn": "Lấp đầy không bắt đầu ở đội ngũ thương mại",
+		    "subtitle_vn": "Góc nhìn MAXON Intel",
+		    "desc_vn": "Vì sao nhóm ngành, tiêu chuẩn sản phẩm và phân kỳ phải được quyết định từ sớm.",
+		    "category_gb": "In-depth Analysis",
+		    "title_gb": "Occupancy doesn't start with the commercial team",
+		    "subtitle_gb": "A MAXON Intel perspective",
+		    "desc_gb": "Why sector selection, product standards, and phasing must be decided early.",
+		    "link": { 
+	    		"url": "#", 
+			    "name_vn": "Đọc ấn phẩm",
+				"name_gb": "Read publication"
+	    	}
+		}
+	]
+}

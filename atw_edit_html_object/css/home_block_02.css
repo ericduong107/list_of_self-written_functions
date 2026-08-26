@@ -1,0 +1,110 @@
+::root {
+  --font-family: Be Vietnam Pro, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home_block_02 {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #aeb5b3;
+  background: transparent;
+}
+
+.home_block_02 .item {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex: 1;
+  flex-direction: row;
+  padding: 28px 8px;
+  border-bottom: 1px solid #aeb5b3;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home_block_02 .number {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d56a3d;
+  line-height: 1;
+  font-family: var(--font-family);
+  transition: 0.3s;
+}
+
+.home_block_02 .content {
+  width: 100%;
+}
+
+.home_block_02 h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: var(--font-family);
+  transition: 0.3s;
+}
+
+.home_block_02 p {
+  font-size: 17px;
+  color: #fff;
+  line-height: 1.7;
+  font-family: var(--font-family);
+  transition: 0.3s;
+}
+
+/* Hover */
+.home_block_02 .item:hover {
+  background: url("https://115.78.228.208:20350/autowebapp/6a33979fe1efaca9638c791b/images/design/objects/ảnh-1---website-maxon-indus.jpeg");
+  background-repeat: no-repeat;
+  transition: 0.3s;
+  background-size: cover;
+}
+
+.home_block_02 .item:hover .number {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.home_block_02 .item:hover h3,
+.home_block_02 .item:hover p {
+  color: #fff;
+  transition: 0.3s;
+}
+
+@media (max-width: 991px) {
+  .home_block_02 {
+    flex-wrap: wrap;
+  }
+
+  .home_block_02 .item {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .home_block_02 .item {
+    flex: 0 0 100%;
+  }
+
+  .home_block_02 .number {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  .home_block_02 .item {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .home_block_02 .arrow {
+    display: none;
+  }
+}
