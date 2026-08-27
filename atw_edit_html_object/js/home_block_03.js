@@ -93,8 +93,20 @@ function refreshCoreValuesLanguage() {
         item.querySelector('h3').textContent =
             data['title_' + currentLang] || data.title_vn;
 
-        item.querySelector('p').textContent =
+        item.querySelector('p.desc').textContent =
             data['desc_' + currentLang] || data.desc_vn;
+
+        item.querySelector('p.note').textContent =
+            data['note_' + currentLang] || data.note_vn;
+
+        const links = item.querySelectorAll('.links .links-item');
+
+        links.forEach((linkEle, index2) => {
+            const data2 = data.links[index2];
+
+            linkEle.querySelector('p').textContent =
+                data2['name_' + currentLang] || data2.name_vn;
+        });
     });
 }
 

@@ -8,11 +8,8 @@ const home_block_08 = [
             "title_gb": "Industrial opportunity map for emerging growth corridors",
             "subtitle_gb": "August 2026",
             "desc_gb": "A framework to track location, infrastructure, and sectors to identify opportunities before shaping land portfolios.",
-            "link": { 
-                "url": "#", 
-                "name_vn": "Đọc ấn phẩm",
-                "name_gb": "Read publication"
-            }
+            "btn_vn": "Đọc ấn phẩm",
+            "btn_gb": "Read publication"
         },
         {
             "category_vn": "Nhịp đập thị trường",
@@ -23,11 +20,8 @@ const home_block_08 = [
             "title_gb": "When infrastructure paves the way, supply doesn't automatically become an advantage",
             "subtitle_gb": "Weekly update",
             "desc_gb": "Key conditions to validate after a major infrastructure investment announcement.",
-            "link": { 
-                "url": "#", 
-                "name_vn": "Đọc ấn phẩm",
-                "name_gb": "Read publication"
-            }
+            "btn_vn": "Đọc ấn phẩm",
+            "btn_gb": "Read publication"
         },
         {
             "category_vn": "Phân tích chuyên sâu",
@@ -38,11 +32,8 @@ const home_block_08 = [
             "title_gb": "Occupancy doesn't start with the commercial team",
             "subtitle_gb": "A MAXON Intel perspective",
             "desc_gb": "Why sector selection, product standards, and phasing must be decided early.",
-            "link": { 
-                "url": "#", 
-                "name_vn": "Đọc ấn phẩm",
-                "name_gb": "Read publication"
-            }
+            "btn_vn": "Đọc ấn phẩm",
+            "btn_gb": "Read publication"
         }
     ];
 
@@ -60,8 +51,17 @@ function refreshCoreValuesLanguage() {
         item.querySelector('h3').textContent =
             data['title_' + currentLang] || data.title_vn;
 
-        item.querySelector('p').textContent =
+        item.querySelector('p.desc').textContent =
             data['desc_' + currentLang] || data.desc_vn;
+
+        item.querySelector('p.subtitle').textContent =
+            data['subtitle_' + currentLang] || data.subtitle_vn;
+
+        item.querySelector('span.category').textContent =
+            data['category_' + currentLang] || data.category_vn;
+
+        item.querySelector('.btn p').textContent =
+            data['btn_' + currentLang] || data.btn_vn;
     });
 }
 

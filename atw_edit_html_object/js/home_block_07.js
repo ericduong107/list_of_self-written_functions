@@ -47,8 +47,11 @@ function refreshCoreValuesLanguage() {
         item.querySelector('h3').textContent =
             data['title_' + currentLang] || data.title_vn;
 
-        item.querySelector('p').textContent =
+        item.querySelector('p.desc').textContent =
             data['desc_' + currentLang] || data.desc_vn;
+
+        item.querySelector('p.subtitle').textContent =
+            data['subtitle_' + currentLang] || data.subtitle_vn;
     });
 }
 

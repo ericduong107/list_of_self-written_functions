@@ -35,7 +35,9 @@
 
 .home_block_03 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .home_block_03 .header svg {
@@ -52,7 +54,6 @@
   line-height: 1;
   font-family: var(--font-family);
   transition: 0.3s;
-  margin-bottom: 40px;
 }
 
 .home_block_03 .content {
@@ -87,6 +88,7 @@
 .home_block_03 .links-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-top: 1px solid #aeb5b3;
   padding: 16px 0;
 }
@@ -106,7 +108,7 @@
 
 /* Hover */
 .home_block_03 .item:hover {
-  background: url("https://115.78.228.208:20350/autowebapp/6a33979fe1efaca9638c791b/images/design/objects/ảnh-1---website-maxon-indus.jpeg");
+  background: url("https://115.78.228.208:20350/autowebapp/6a8c0478719658390c0ef2be/images/design/blocks/%E1%BA%A3nh-1---website-maxon-indus.jpeg");
   background-repeat: no-repeat;
   transition: 0.3s;
   background-size: cover;
@@ -128,19 +130,14 @@
   transition: 0.3s;
 }
 
-.home_block_03 .item:hover .arrow {
-  color: #fff;
-  transform: translate(5px, -5px);
-  transition: 0.3s;
-}
-
 @media (max-width: 991px) {
   .home_block_03 {
     flex-wrap: wrap;
   }
 
   .home_block_03 .item {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
+    border: none;
   }
 }
 
@@ -148,19 +145,11 @@
   .home_block_03 .item {
     flex: 0 0 100%;
   }
-
-  .home_block_03 .number {
-    font-size: 42px;
-    margin-bottom: 30px;
-  }
 }
 
 @media (max-width: 425px) {
   .home_block_03 .item {
     flex-direction: column;
     gap: 16px;
-  }
-  .home_block_03 .arrow {
-    display: none;
   }
 }
