@@ -1,7 +1,8 @@
 import json
+import time
 from deep_translator import GoogleTranslator
 
-def translate_json(input_path, output_path, source_lang='vi', target_lang='en'):
+def translate_json(input_path, output_path, source_lang='vi', target_lang='en', max_retries=3, delay=1 ):
     with open(input_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
@@ -31,15 +32,15 @@ def translate_json(input_path, output_path, source_lang='vi', target_lang='en'):
 
 print('Tiếng Anh')
 translate_json('input_vi.json', 'output_en.json')
-print('======================================')
-print('Tiếng Hàn')
-translate_json('input_vi.json', 'output_ko.json', 'vi', 'ko')
-print('======================================')
-print('Tiếng Nhật')
-translate_json('input_vi.json', 'output_ja.json', 'vi', 'ja')
-print('======================================')
-print('Tiếng Trung')
-translate_json('input_vi.json', 'output_zh-CN.json', 'vi', 'zh-CN')
+# print('======================================')
+# print('Tiếng Hàn')
+# translate_json('input_vi.json', 'output_ko.json', 'vi', 'ko')
+# print('======================================')
+# print('Tiếng Nhật')
+# translate_json('input_vi.json', 'output_ja.json', 'vi', 'ja')
+# print('======================================')
+# print('Tiếng Trung')
+# translate_json('input_vi.json', 'output_zh-CN.json', 'vi', 'zh-CN')
 
 # Muốn nhanh hơn thì sài cái này
 # https://translate.i18next.com/
